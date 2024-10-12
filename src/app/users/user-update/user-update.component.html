@@ -1,0 +1,51 @@
+<div class="form-container">
+  <h2>Editar Usuário</h2>
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="user.name"
+        class="form-control"
+        placeholder="Digite o nome"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="user.email"
+        class="form-control"
+        placeholder="Digite o email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="document">Documento</label>
+      <input
+        type="text"
+        id="document"
+        name="document"
+        [(ngModel)]="user.document"
+        class="form-control"
+        placeholder="Digite o documento"
+      />
+    </div>
+
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn-submit"
+        [disabled]="!userForm.form.valid"
+      >
+        Salvar Alterações
+      </button>
+      <button class="btn-back" (click)="goBack()">Voltar</button>
+    </div>
+  </form>
+</div>

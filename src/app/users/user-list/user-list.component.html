@@ -1,0 +1,30 @@
+<div class="user-list-header">
+  <h2>Lista de Usuários</h2>
+  <button class="btn-new-user" (click)="addUser()">Novo Usuário</button>
+</div>
+
+<div class="user-list">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Documento</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.document }}</td>
+        <td>
+          <button class="btn-edit" (click)="editUser(user.id)">Editar</button>
+          <button class="btn-delete" (click)="deleteUser(user.id)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
