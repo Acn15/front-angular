@@ -3,13 +3,15 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @Component({
   selector: 'app-user-create',
   standalone: true,
   templateUrl: './user-create.component.html',
   styleUrls: ['./user-create.component.scss'],
-  imports: [FormsModule],
+  imports: [FormsModule, NgxMaskDirective, NgxMaskPipe],
+  providers: [provideNgxMask()],
 })
 export class UserCreateComponent {
   user = {

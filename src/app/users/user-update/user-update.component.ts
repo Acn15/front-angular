@@ -4,15 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../model/user.model';
 import { environment } from '../../../environments/environment';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @Component({
   selector: 'app-user-update',
   standalone: true,
   templateUrl: './user-update.component.html',
   styleUrl: './user-update.component.scss',
-  imports: [FormsModule],
+  imports: [FormsModule, NgxMaskDirective, NgxMaskPipe],
+  providers: [provideNgxMask()],
 })
-export class UserEditComponent implements OnInit {
+export class UserUpdateComponent implements OnInit {
   user = {
     id: 0,
     name: '',
